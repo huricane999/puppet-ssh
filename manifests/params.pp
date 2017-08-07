@@ -2,7 +2,12 @@ class ssh::params {
   case $::osfamily {
     'Debian': {
       $server_package_name = 'openssh-server'
+      $server_package_install_options = undef
+      $server_package_uninstall_options = undef
       $client_package_name = 'openssh-client'
+      $client_package_install_options = undef
+      $client_package_uninstall_options = undef
+      $package_provider = undef
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -12,7 +17,12 @@ class ssh::params {
     }
     'RedHat': {
       $server_package_name = 'openssh-server'
+      $server_package_install_options = undef
+      $server_package_uninstall_options = undef
       $client_package_name = 'openssh-clients'
+      $client_package_install_options = undef
+      $client_package_uninstall_options = undef
+      $package_provider = undef
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -22,7 +32,12 @@ class ssh::params {
     }
     'FreeBSD', 'DragonFly': {
       $server_package_name = undef
+      $server_package_install_options = undef
+      $server_package_uninstall_options = undef
       $client_package_name = undef
+      $client_package_install_options = undef
+      $client_package_uninstall_options = undef
+      $package_provider = undef
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -32,7 +47,12 @@ class ssh::params {
     }
     'OpenBSD': {
       $server_package_name = undef
+      $server_package_install_options = undef
+      $server_package_uninstall_options = undef
       $client_package_name = undef
+      $client_package_install_options = undef
+      $client_package_uninstall_options = undef
+      $package_provider = undef
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -42,7 +62,12 @@ class ssh::params {
     }
     'Darwin': {
       $server_package_name = undef
+      $server_package_install_options = undef
+      $server_package_uninstall_options = undef
       $client_package_name = undef
+      $client_package_install_options = undef
+      $client_package_uninstall_options = undef
+      $package_provider = undef
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -50,9 +75,29 @@ class ssh::params {
       $service_name = 'com.openssh.sshd'
       $sftp_server_path = '/usr/libexec/sftp-server'
     }
+    'windows': {
+      $server_package_name = 'openssh'
+      $server_package_install_options = ['/SSHServerFeature']
+      $server_package_uninstall_options = ['/SSHServerFeature']
+      $client_package_name = 'openssh'
+      $client_package_install_options = undef
+      $client_package_uninstall_options = undef
+      $package_provider = 'chocolatey'
+      $sshd_dir = 'C:/Program Files/OpenSSH-Win64'
+      $sshd_config = 'C:/Program Files/OpenSSH-Win64/sshd_config'
+      $ssh_config = 'C:/Program Files/OpenSSH-Win64/ssh_config'
+      $ssh_known_hosts = 'C:/Program Files/OpenSSH-Win64/ssh_known_hosts'
+      $service_name = 'sshd'
+      $sftp_server_path = 'C:/Program Files/OpenSSH-Win64/sftp-server.exe'
+    }
     'ArchLinux': {
       $server_package_name = 'openssh'
+      $server_package_install_options = undef
+      $server_package_uninstall_options = undef
       $client_package_name = 'openssh'
+      $client_package_install_options = undef
+      $client_package_uninstall_options = undef
+      $package_provider = undef
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -62,7 +107,12 @@ class ssh::params {
     }
     'Suse': {
       $server_package_name = 'openssh'
+      $server_package_install_options = undef
+      $server_package_uninstall_options = undef
       $client_package_name = 'openssh'
+      $client_package_install_options = undef
+      $client_package_uninstall_options = undef
+      $package_provider = undef
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -97,7 +147,12 @@ class ssh::params {
       case $::operatingsystem {
         'SmartOS': {
           $server_package_name = undef
+          $server_package_install_options = undef
+          $server_package_uninstall_options = undef
           $client_package_name = undef
+          $client_package_install_options = undef
+          $client_package_uninstall_options = undef
+          $package_provider = undef
           $sshd_dir = '/etc/ssh'
           $sshd_config = '/etc/ssh/sshd_config'
           $ssh_config = '/etc/ssh/ssh_config'
@@ -112,6 +167,11 @@ class ssh::params {
           $ssh_known_hosts = '/etc/ssh/ssh_known_hosts'
           $service_name = 'svc:/network/ssh:default'
           $sftp_server_path = 'internal-sftp'
+          $server_package_install_options = undef
+          $server_package_uninstall_options = undef
+          $client_package_install_options = undef
+          $client_package_uninstall_options = undef
+          $package_provider = undef
           case versioncmp($::kernelrelease, '5.10') {
             1: {
               # Solaris 11 and later
@@ -135,7 +195,12 @@ class ssh::params {
       case $::operatingsystem {
         'Gentoo': {
           $server_package_name = 'openssh'
+          $server_package_install_options = undef
+          $server_package_uninstall_options = undef
           $client_package_name = 'openssh'
+          $client_package_install_options = undef
+          $client_package_uninstall_options = undef
+          $package_provider = undef
           $sshd_dir = '/etc/ssh'
           $sshd_config = '/etc/ssh/sshd_config'
           $ssh_config = '/etc/ssh/ssh_config'
@@ -145,7 +210,12 @@ class ssh::params {
         }
         'Amazon': {
           $server_package_name = 'openssh-server'
+          $server_package_install_options = undef
+          $server_package_uninstall_options = undef
           $client_package_name = 'openssh-clients'
+          $client_package_install_options = undef
+          $client_package_uninstall_options = undef
+          $package_provider = undef
           $sshd_dir = '/etc/ssh'
           $sshd_config = '/etc/ssh/sshd_config'
           $ssh_config = '/etc/ssh/ssh_config'
