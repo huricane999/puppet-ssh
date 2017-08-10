@@ -3,6 +3,10 @@ class ssh::knownhosts(
   $storeconfigs_group = undef,
 ) inherits ssh::params {
   if ($collect_enabled) {
+    Sshkey {
+      target => $ssh::params::ssh_known_hosts,
+    }
+
     resources { 'sshkey':
       purge => true,
     }
