@@ -318,18 +318,11 @@ class ssh::params {
     }
     'windows': {
       $sshd_default_options = {
-        'ChallengeResponseAuthentication' => 'no',
-        'PrintMotd'                       => 'no',
-        'AcceptEnv'                       => 'LANG LC_*',
-        'Subsystem'                       => "sftp ${sftp_server_path}",
-        'hostkeyagent'                    => '\\\\.\pipe\openssh-ssh-agent',
+        'AuthorizedKeysFile' => '.ssh/authorized_keys',
+        'Subsystem'          => "sftp ${sftp_server_path}",
+        'hostkeyagent'       => '\\\\.\pipe\openssh-ssh-agent',
       }
-      $ssh_default_options = {
-        'Host *'                 => {
-          'SendEnv'              => 'LANG LC_*',
-          'HashKnownHosts'       => 'yes',
-        },
-      }
+      $ssh_default_options = { }
     }
     default: {
       $sshd_default_options = {
