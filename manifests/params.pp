@@ -319,7 +319,6 @@ class ssh::params {
     'windows': {
       $sshd_default_options = {
         'ChallengeResponseAuthentication' => 'no',
-        'X11Forwarding'                   => 'yes',
         'PrintMotd'                       => 'no',
         'AcceptEnv'                       => 'LANG LC_*',
         'Subsystem'                       => "sftp ${sftp_server_path}",
