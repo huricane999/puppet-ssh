@@ -319,6 +319,7 @@ class ssh::params {
     'windows': {
       $sshd_default_options = {
         'AuthorizedKeysFile' => '.ssh/authorized_keys',
+        'LogLevel'           => 'QUIET',
         'Subsystem'          => "sftp ${sftp_server_path}",
         'hostkeyagent'       => '\\\\.\pipe\openssh-ssh-agent',
       }
