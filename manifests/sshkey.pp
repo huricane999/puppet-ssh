@@ -1,6 +1,6 @@
 # This sits in front of sshkey so that we can adjust the target path
 # according to the needs of the local OS.
-class ssh::sshkey(
+define ssh::sshkey(
   $ensure = undef,
   $host_aliases = undef,
   $key = undef,
