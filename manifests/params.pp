@@ -107,10 +107,15 @@ class ssh::params {
       $filegroup = 'Administrators'
       $pubfilemode = '0664'
       $prvfilemode = '0660'
-      $sshd_dir = 'C:/Program Files/OpenSSH-Win64'
-      $sshd_config = 'C:/Program Files/OpenSSH-Win64/sshd_config'
-      $ssh_config = 'C:/Program Files/OpenSSH-Win64/ssh_config'
-      $ssh_known_hosts = 'C:/Program Files/OpenSSH-Win64/ssh_known_hosts'
+      if $::windows_systemtype == 'x64' {
+        $sshd_dir = 'C:/Program Files/OpenSSH-Win64'
+      }
+      else {
+        $sshd_dir = 'C:/Program Files/OpenSSH-Win32'
+      }
+      $sshd_config = "${sshd_dir}/sshd_config"
+      $ssh_config = "${sshd_dir}/ssh_config"
+      $ssh_known_hosts = "${sshd_dir}/ssh_known_hosts"
       $service_name = 'sshd'
       $sftp_server_path = 'sftp-server.exe'
     }
