@@ -3,14 +3,18 @@ class ssh::knownhosts(
   $storeconfigs_group = undef,
 ) inherits ssh::params {
   if ($collect_enabled) {
-    resources { 'ssh::sshkey':
+    resources { 'sshkey':
       purge => true,
     }
 
     if $storeconfigs_group {
-      Ssh::Sshkey <<| tag == "hostkey_${storeconfigs_group}" |>>
+      Sshkey <<| tag == "hostkey_${storeconfigs_group}" |>> {
+        target => $ssh::params::ssh_known_hosts,
+      }
     } else {
-      Ssh::Sshkey <<| |>>
+      Sshkey <<| |>> {
+        target => $ssh::params::ssh_known_hosts,
+      }
     }
   }
 }
