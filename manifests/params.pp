@@ -8,6 +8,10 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
+      $fileowner = 'root'
+      $filegroup = 'root'
+      $pubfilemode = '0644'
+      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -23,6 +27,10 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
+      $fileowner = 'root'
+      $filegroup = 'root'
+      $pubfilemode = '0644'
+      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -38,6 +46,10 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
+      $fileowner = 'root'
+      $filegroup = 'root'
+      $pubfilemode = '0644'
+      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -53,6 +65,10 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
+      $fileowner = 'root'
+      $filegroup = 'root'
+      $pubfilemode = '0644'
+      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -68,6 +84,10 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
+      $fileowner = 'root'
+      $filegroup = 'root'
+      $pubfilemode = '0644'
+      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -83,6 +103,10 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = 'chocolatey'
+      $fileowner = 'Administrators'
+      $filegroup = 'Administrators'
+      $pubfilemode = '0664'
+      $prvfilemode = '0660'
       $sshd_dir = 'C:/Program Files/OpenSSH-Win64'
       $sshd_config = 'C:/Program Files/OpenSSH-Win64/sshd_config'
       $ssh_config = 'C:/Program Files/OpenSSH-Win64/ssh_config'
@@ -98,6 +122,10 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
+      $fileowner = 'root'
+      $filegroup = 'root'
+      $pubfilemode = '0644'
+      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -113,6 +141,10 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
+      $fileowner = 'root'
+      $filegroup = 'root'
+      $pubfilemode = '0644'
+      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -153,6 +185,10 @@ class ssh::params {
           $client_package_install_options = undef
           $client_package_uninstall_options = undef
           $package_provider = undef
+          $fileowner = 'root'
+          $filegroup = 'root'
+          $pubfilemode = '0644'
+          $prvfilemode = '0600'
           $sshd_dir = '/etc/ssh'
           $sshd_config = '/etc/ssh/sshd_config'
           $ssh_config = '/etc/ssh/ssh_config'
@@ -161,6 +197,10 @@ class ssh::params {
           $sftp_server_path = 'internal-sftp'
         }
         default: {
+          $fileowner = 'root'
+          $filegroup = 'root'
+          $pubfilemode = '0644'
+          $prvfilemode = '0600'
           $sshd_dir = '/etc/ssh'
           $sshd_config = '/etc/ssh/sshd_config'
           $ssh_config = '/etc/ssh/ssh_config'
@@ -201,6 +241,10 @@ class ssh::params {
           $client_package_install_options = undef
           $client_package_uninstall_options = undef
           $package_provider = undef
+          $fileowner = 'root'
+          $filegroup = 'root'
+          $pubfilemode = '0644'
+          $prvfilemode = '0600'
           $sshd_dir = '/etc/ssh'
           $sshd_config = '/etc/ssh/sshd_config'
           $ssh_config = '/etc/ssh/ssh_config'
@@ -216,6 +260,10 @@ class ssh::params {
           $client_package_install_options = undef
           $client_package_uninstall_options = undef
           $package_provider = undef
+          $fileowner = 'root'
+          $filegroup = 'root'
+          $pubfilemode = '0644'
+          $prvfilemode = '0600'
           $sshd_dir = '/etc/ssh'
           $sshd_config = '/etc/ssh/sshd_config'
           $ssh_config = '/etc/ssh/ssh_config'

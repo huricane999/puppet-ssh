@@ -15,9 +15,9 @@ class ssh::server::config {
   } else {
     concat { $ssh::params::sshd_config:
       ensure       => present,
-      owner        => '0',
-      group        => '0',
-      mode         => '0600',
+      owner        => $ssh::params::fileowner,
+      group        => $ssh::params::filegroup,
+      mode         => $ssh::params::prvfilemode,
       validate_cmd => $sshd_validate_cmd,
       notify       => Service[$ssh::params::service_name],
     }
@@ -32,9 +32,9 @@ class ssh::server::config {
   if $::ssh::server::use_issue_net {
     file { $ssh::params::issue_net:
       ensure  => present,
-      owner   => 0,
-      group   => 0,
-      mode    => '0644',
+      owner   => $ssh::params::fileowner,
+      group   => $ssh::params::filegroup,
+      mode    => $ssh::params::pubfilemode,
       content => template("${module_name}/issue.net.erb"),
       notify  => Service[$ssh::params::service_name],
     }
