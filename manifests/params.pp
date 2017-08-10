@@ -281,6 +281,7 @@ class ssh::params {
   # ssh & sshd default options:
   # - OpenBSD doesn't know about UsePAM
   # - Sun_SSH doesn't know about UsePAM & AcceptEnv; SendEnv & HashKnownHosts
+  # - Windows doesn't know about UsePAM
   case $::osfamily {
     'OpenBSD': {
       $sshd_default_options = {
@@ -309,6 +310,21 @@ class ssh::params {
         ],
       }
       $ssh_default_options = { }
+    }
+    'windows': {
+      $sshd_default_options = {
+        'ChallengeResponseAuthentication' => 'no',
+        'X11Forwarding'                   => 'yes',
+        'PrintMotd'                       => 'no',
+        'AcceptEnv'                       => 'LANG LC_*',
+        'Subsystem'                       => "sftp ${sftp_server_path}",
+      }
+      $ssh_default_options = {
+        'Host *'                 => {
+          'SendEnv'              => 'LANG LC_*',
+          'HashKnownHosts'       => 'yes',
+        },
+      }
     }
     default: {
       $sshd_default_options = {
