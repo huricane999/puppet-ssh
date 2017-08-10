@@ -112,7 +112,7 @@ class ssh::params {
       $ssh_config = 'C:/Program Files/OpenSSH-Win64/ssh_config'
       $ssh_known_hosts = 'C:/Program Files/OpenSSH-Win64/ssh_known_hosts'
       $service_name = 'sshd'
-      $sftp_server_path = 'C:/Program Files/OpenSSH-Win64/sftp-server.exe'
+      $sftp_server_path = 'sftp-server.exe'
     }
     'ArchLinux': {
       $server_package_name = 'openssh'
