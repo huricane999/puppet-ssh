@@ -322,7 +322,7 @@ class ssh::params {
         'PrintMotd'                       => 'no',
         'AcceptEnv'                       => 'LANG LC_*',
         'Subsystem'                       => "sftp ${sftp_server_path}",
-        'hostkeyagent'                    => '\\.\pipe\openssh-ssh-agent',
+        'hostkeyagent'                    => '\\\\.\pipe\openssh-ssh-agent',
       }
       $ssh_default_options = {
         'Host *'                 => {
