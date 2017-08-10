@@ -2,7 +2,16 @@ class ssh::params {
   case $::osfamily {
     'Debian': {
       $server_package_name = 'openssh-server'
+      $server_package_install_options = undef
+      $server_package_uninstall_options = undef
       $client_package_name = 'openssh-client'
+      $client_package_install_options = undef
+      $client_package_uninstall_options = undef
+      $package_provider = undef
+      $fileowner = 'root'
+      $filegroup = 'root'
+      $pubfilemode = '0644'
+      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -12,7 +21,16 @@ class ssh::params {
     }
     'RedHat': {
       $server_package_name = 'openssh-server'
+      $server_package_install_options = undef
+      $server_package_uninstall_options = undef
       $client_package_name = 'openssh-clients'
+      $client_package_install_options = undef
+      $client_package_uninstall_options = undef
+      $package_provider = undef
+      $fileowner = 'root'
+      $filegroup = 'root'
+      $pubfilemode = '0644'
+      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -22,7 +40,16 @@ class ssh::params {
     }
     'FreeBSD', 'DragonFly': {
       $server_package_name = undef
+      $server_package_install_options = undef
+      $server_package_uninstall_options = undef
       $client_package_name = undef
+      $client_package_install_options = undef
+      $client_package_uninstall_options = undef
+      $package_provider = undef
+      $fileowner = 'root'
+      $filegroup = 'root'
+      $pubfilemode = '0644'
+      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -32,7 +59,16 @@ class ssh::params {
     }
     'OpenBSD': {
       $server_package_name = undef
+      $server_package_install_options = undef
+      $server_package_uninstall_options = undef
       $client_package_name = undef
+      $client_package_install_options = undef
+      $client_package_uninstall_options = undef
+      $package_provider = undef
+      $fileowner = 'root'
+      $filegroup = 'root'
+      $pubfilemode = '0644'
+      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -42,7 +78,16 @@ class ssh::params {
     }
     'Darwin': {
       $server_package_name = undef
+      $server_package_install_options = undef
+      $server_package_uninstall_options = undef
       $client_package_name = undef
+      $client_package_install_options = undef
+      $client_package_uninstall_options = undef
+      $package_provider = undef
+      $fileowner = 'root'
+      $filegroup = 'root'
+      $pubfilemode = '0644'
+      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -50,9 +95,42 @@ class ssh::params {
       $service_name = 'com.openssh.sshd'
       $sftp_server_path = '/usr/libexec/sftp-server'
     }
+    'windows': {
+      $server_package_name = 'openssh'
+      $server_package_install_options = ['/SSHServerFeature']
+      $server_package_uninstall_options = ['/SSHServerFeature']
+      $client_package_name = 'openssh'
+      $client_package_install_options = undef
+      $client_package_uninstall_options = undef
+      $package_provider = 'chocolatey'
+      $fileowner = 'Administrators'
+      $filegroup = 'Administrators'
+      $pubfilemode = '0664'
+      $prvfilemode = '0660'
+      if $::windows_systemtype == 'x64' {
+        $sshd_dir = 'C:/Program Files/OpenSSH-Win64'
+      }
+      else {
+        $sshd_dir = 'C:/Program Files/OpenSSH-Win32'
+      }
+      $sshd_config = "${sshd_dir}/sshd_config"
+      $ssh_config = "${sshd_dir}/ssh_config"
+      $ssh_known_hosts = "${sshd_dir}/ssh_known_hosts"
+      $service_name = 'sshd'
+      $sftp_server_path = 'sftp-server.exe'
+    }
     'ArchLinux': {
       $server_package_name = 'openssh'
+      $server_package_install_options = undef
+      $server_package_uninstall_options = undef
       $client_package_name = 'openssh'
+      $client_package_install_options = undef
+      $client_package_uninstall_options = undef
+      $package_provider = undef
+      $fileowner = 'root'
+      $filegroup = 'root'
+      $pubfilemode = '0644'
+      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -62,7 +140,16 @@ class ssh::params {
     }
     'Suse': {
       $server_package_name = 'openssh'
+      $server_package_install_options = undef
+      $server_package_uninstall_options = undef
       $client_package_name = 'openssh'
+      $client_package_install_options = undef
+      $client_package_uninstall_options = undef
+      $package_provider = undef
+      $fileowner = 'root'
+      $filegroup = 'root'
+      $pubfilemode = '0644'
+      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -97,7 +184,16 @@ class ssh::params {
       case $::operatingsystem {
         'SmartOS': {
           $server_package_name = undef
+          $server_package_install_options = undef
+          $server_package_uninstall_options = undef
           $client_package_name = undef
+          $client_package_install_options = undef
+          $client_package_uninstall_options = undef
+          $package_provider = undef
+          $fileowner = 'root'
+          $filegroup = 'root'
+          $pubfilemode = '0644'
+          $prvfilemode = '0600'
           $sshd_dir = '/etc/ssh'
           $sshd_config = '/etc/ssh/sshd_config'
           $ssh_config = '/etc/ssh/ssh_config'
@@ -106,12 +202,21 @@ class ssh::params {
           $sftp_server_path = 'internal-sftp'
         }
         default: {
+          $fileowner = 'root'
+          $filegroup = 'root'
+          $pubfilemode = '0644'
+          $prvfilemode = '0600'
           $sshd_dir = '/etc/ssh'
           $sshd_config = '/etc/ssh/sshd_config'
           $ssh_config = '/etc/ssh/ssh_config'
           $ssh_known_hosts = '/etc/ssh/ssh_known_hosts'
           $service_name = 'svc:/network/ssh:default'
           $sftp_server_path = 'internal-sftp'
+          $server_package_install_options = undef
+          $server_package_uninstall_options = undef
+          $client_package_install_options = undef
+          $client_package_uninstall_options = undef
+          $package_provider = undef
           case versioncmp($::kernelrelease, '5.10') {
             1: {
               # Solaris 11 and later
@@ -135,7 +240,16 @@ class ssh::params {
       case $::operatingsystem {
         'Gentoo': {
           $server_package_name = 'openssh'
+          $server_package_install_options = undef
+          $server_package_uninstall_options = undef
           $client_package_name = 'openssh'
+          $client_package_install_options = undef
+          $client_package_uninstall_options = undef
+          $package_provider = undef
+          $fileowner = 'root'
+          $filegroup = 'root'
+          $pubfilemode = '0644'
+          $prvfilemode = '0600'
           $sshd_dir = '/etc/ssh'
           $sshd_config = '/etc/ssh/sshd_config'
           $ssh_config = '/etc/ssh/ssh_config'
@@ -145,7 +259,16 @@ class ssh::params {
         }
         'Amazon': {
           $server_package_name = 'openssh-server'
+          $server_package_install_options = undef
+          $server_package_uninstall_options = undef
           $client_package_name = 'openssh-clients'
+          $client_package_install_options = undef
+          $client_package_uninstall_options = undef
+          $package_provider = undef
+          $fileowner = 'root'
+          $filegroup = 'root'
+          $pubfilemode = '0644'
+          $prvfilemode = '0600'
           $sshd_dir = '/etc/ssh'
           $sshd_config = '/etc/ssh/sshd_config'
           $ssh_config = '/etc/ssh/ssh_config'
@@ -163,6 +286,7 @@ class ssh::params {
   # ssh & sshd default options:
   # - OpenBSD doesn't know about UsePAM
   # - Sun_SSH doesn't know about UsePAM & AcceptEnv; SendEnv & HashKnownHosts
+  # - Windows doesn't know about UsePAM & override host key paths
   case $::osfamily {
     'OpenBSD': {
       $sshd_default_options = {
@@ -191,6 +315,21 @@ class ssh::params {
         ],
       }
       $ssh_default_options = { }
+    }
+    'windows': {
+      $sshd_default_options = {
+        'ChallengeResponseAuthentication' => 'no',
+        'PrintMotd'                       => 'no',
+        'AcceptEnv'                       => 'LANG LC_*',
+        'Subsystem'                       => "sftp ${sftp_server_path}",
+        'hostkeyagent'                    => '\\.\pipe\openssh-ssh-agent',
+      }
+      $ssh_default_options = {
+        'Host *'                 => {
+          'SendEnv'              => 'LANG LC_*',
+          'HashKnownHosts'       => 'yes',
+        },
+      }
     }
     default: {
       $sshd_default_options = {
