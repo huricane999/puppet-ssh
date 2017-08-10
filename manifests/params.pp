@@ -281,7 +281,7 @@ class ssh::params {
   # ssh & sshd default options:
   # - OpenBSD doesn't know about UsePAM
   # - Sun_SSH doesn't know about UsePAM & AcceptEnv; SendEnv & HashKnownHosts
-  # - Windows doesn't know about UsePAM
+  # - Windows doesn't know about UsePAM & override host key paths
   case $::osfamily {
     'OpenBSD': {
       $sshd_default_options = {
@@ -318,6 +318,11 @@ class ssh::params {
         'PrintMotd'                       => 'no',
         'AcceptEnv'                       => 'LANG LC_*',
         'Subsystem'                       => "sftp ${sftp_server_path}",
+        'HostKey'                         => [
+          "${sshd_dir}/ssh_host_rsa_key",
+          "${sshd_dir}/ssh_host_ecdsa_key",
+          "${sshd_dir}/ssh_host_ed25519_key",
+        ],
       }
       $ssh_default_options = {
         'Host *'                 => {
