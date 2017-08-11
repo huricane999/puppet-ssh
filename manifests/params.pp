@@ -40,7 +40,7 @@ class ssh::params {
         privkey => {
           owner => 'root',
           group => 'root',
-          mode  => '0640',
+          mode  => '0600',
         },
         pubkey => {
           owner => 'root',
@@ -89,7 +89,7 @@ class ssh::params {
         privkey => {
           owner => 'root',
           group => 'root',
-          mode  => '0640',
+          mode  => '0600',
         },
         pubkey => {
           owner => 'root',
@@ -138,7 +138,7 @@ class ssh::params {
         privkey => {
           owner => 'root',
           group => 'root',
-          mode  => '0640',
+          mode  => '0600',
         },
         pubkey => {
           owner => 'root',
@@ -187,7 +187,7 @@ class ssh::params {
         privkey => {
           owner => 'root',
           group => 'root',
-          mode  => '0640',
+          mode  => '0600',
         },
         pubkey => {
           owner => 'root',
@@ -236,7 +236,7 @@ class ssh::params {
         privkey => {
           owner => 'root',
           group => 'root',
-          mode  => '0640',
+          mode  => '0600',
         },
         pubkey => {
           owner => 'root',
@@ -255,7 +255,7 @@ class ssh::params {
       $package_provider = 'chocolatey'
       $fileperms = {
         ssh_config => {
-          owner => 'Administrstors',
+          owner => 'Administrators',
           group => 'Users',
           mode  => '0755',
         },
@@ -339,7 +339,7 @@ class ssh::params {
         privkey => {
           owner => 'root',
           group => 'root',
-          mode  => '0640',
+          mode  => '0600',
         },
         pubkey => {
           owner => 'root',
@@ -386,7 +386,7 @@ class ssh::params {
         privkey => {
           owner => 'root',
           group => 'root',
-          mode  => '0640',
+          mode  => '0600',
         },
         pubkey => {
           owner => 'root',
@@ -462,7 +462,7 @@ class ssh::params {
             privkey => {
               owner => 'root',
               group => 'root',
-              mode  => '0640',
+              mode  => '0600',
             },
             pubkey => {
               owner => 'root',
@@ -509,7 +509,7 @@ class ssh::params {
             privkey => {
               owner => 'root',
               group => 'root',
-              mode  => '0640',
+              mode  => '0600',
             },
             pubkey => {
               owner => 'root',
@@ -578,7 +578,7 @@ class ssh::params {
             privkey => {
               owner => 'root',
               group => 'root',
-              mode  => '0640',
+              mode  => '0600',
             },
             pubkey => {
               owner => 'root',
@@ -627,7 +627,7 @@ class ssh::params {
             privkey => {
               owner => 'root',
               group => 'root',
-              mode  => '0640',
+              mode  => '0600',
             },
             pubkey => {
               owner => 'root',
