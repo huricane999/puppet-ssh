@@ -8,10 +8,6 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
-      $fileowner = 'root'
-      $filegroup = 'root'
-      $pubfilemode = '0644'
-      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -19,6 +15,38 @@ class ssh::params {
       $service_name = 'ssh'
       $sftp_server_path = '/usr/lib/openssh/sftp-server'
       $newline = "\n"
+      $fileperms = {
+        ssh_config => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        known_hosts => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        sshd_config => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0640',
+        },
+        issue_net => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        privkey => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0640',
+        },
+        pubkey => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        }
+      }
     }
     'RedHat': {
       $server_package_name = 'openssh-server'
@@ -28,10 +56,6 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
-      $fileowner = 'root'
-      $filegroup = 'root'
-      $pubfilemode = '0644'
-      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -39,6 +63,38 @@ class ssh::params {
       $service_name = 'sshd'
       $sftp_server_path = '/usr/libexec/openssh/sftp-server'
       $newline = "\n"
+      $fileperms = {
+        ssh_config => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        known_hosts => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        sshd_config => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0640',
+        },
+        issue_net => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        privkey => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0640',
+        },
+        pubkey => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        }
+      }
     }
     'FreeBSD', 'DragonFly': {
       $server_package_name = undef
@@ -48,10 +104,6 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
-      $fileowner = 'root'
-      $filegroup = 'root'
-      $pubfilemode = '0644'
-      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -59,6 +111,38 @@ class ssh::params {
       $service_name = 'sshd'
       $sftp_server_path = '/usr/libexec/sftp-server'
       $newline = "\n"
+      $fileperms = {
+        ssh_config => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        known_hosts => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        sshd_config => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0640',
+        },
+        issue_net => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        privkey => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0640',
+        },
+        pubkey => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        }
+      }
     }
     'OpenBSD': {
       $server_package_name = undef
@@ -68,10 +152,6 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
-      $fileowner = 'root'
-      $filegroup = 'root'
-      $pubfilemode = '0644'
-      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -79,6 +159,38 @@ class ssh::params {
       $service_name = 'sshd'
       $sftp_server_path = '/usr/libexec/sftp-server'
       $newline = "\n"
+      $fileperms = {
+        ssh_config => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        known_hosts => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        sshd_config => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0640',
+        },
+        issue_net => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        privkey => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0640',
+        },
+        pubkey => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        }
+      }
     }
     'Darwin': {
       $server_package_name = undef
@@ -88,10 +200,6 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
-      $fileowner = 'root'
-      $filegroup = 'root'
-      $pubfilemode = '0644'
-      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -99,6 +207,38 @@ class ssh::params {
       $service_name = 'com.openssh.sshd'
       $sftp_server_path = '/usr/libexec/sftp-server'
       $newline = "\n"
+      $fileperms = {
+        ssh_config => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        known_hosts => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        sshd_config => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0640',
+        },
+        issue_net => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        privkey => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0640',
+        },
+        pubkey => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        }
+      }
     }
     'windows': {
       $server_package_name = 'openssh'
@@ -108,10 +248,38 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = 'chocolatey'
-      $fileowner = 'Administrators'
-      $filegroup = 'Administrators'
-      $pubfilemode = '0664'
-      $prvfilemode = '0660'
+      $fileperms = {
+        ssh_config => {
+          owner => 'Administrstors',
+          group => 'Users',
+          mode  => '0755',
+        },
+        known_hosts => {
+          owner => 'Administrators',
+          group => 'Users',
+          mode  => '0755',
+        },
+        sshd_config => {
+          owner => 'Administrators',
+          group => 'Users',
+          mode  => '0750',
+        },
+        issue_net => {
+          owner => 'Administrators',
+          group => 'Users',
+          mode  => '0755',
+        },
+        privkey => {
+          owner => 'Administrators',
+          group => 'NT SERVICE\SSHD',
+          mode  => '0750',
+        },
+        pubkey => {
+          owner => 'Administrators',
+          group => 'NT SERVICE\SSHD',
+          mode  => '0755',
+        }
+      }
       if $::windows_systemtype == 'x64' {
         $sshd_dir = 'C:/Program Files/OpenSSH-Win64'
       }
@@ -124,6 +292,38 @@ class ssh::params {
       $service_name = 'sshd'
       $sftp_server_path = 'sftp-server.exe'
       $newline = "\r\n"
+      $fileperms = {
+        ssh_config => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        known_hosts => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        sshd_config => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0640',
+        },
+        issue_net => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        privkey => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0640',
+        },
+        pubkey => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        }
+      }
     }
     'ArchLinux': {
       $server_package_name = 'openssh'
@@ -133,10 +333,6 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
-      $fileowner = 'root'
-      $filegroup = 'root'
-      $pubfilemode = '0644'
-      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -144,6 +340,38 @@ class ssh::params {
       $service_name = 'sshd.service'
       $sftp_server_path = '/usr/lib/ssh/sftp-server'
       $newline = "\n"
+      $fileperms = {
+        ssh_config => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        known_hosts => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        sshd_config => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0640',
+        },
+        issue_net => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        privkey => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0640',
+        },
+        pubkey => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        }
+      }
     }
     'Suse': {
       $server_package_name = 'openssh'
@@ -153,15 +381,43 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
-      $fileowner = 'root'
-      $filegroup = 'root'
-      $pubfilemode = '0644'
-      $prvfilemode = '0600'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
       $ssh_known_hosts = '/etc/ssh/ssh_known_hosts'
       $newline = "\n"
+      $fileperms = {
+        ssh_config => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        known_hosts => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        sshd_config => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0640',
+        },
+        issue_net => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        },
+        privkey => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0640',
+        },
+        pubkey => {
+          owner => 'root',
+          group => 'root',
+          mode  => '0644',
+        }
+      }
       case $::operatingsystem {
         'SLES': {
           $service_name = 'sshd'
@@ -198,10 +454,6 @@ class ssh::params {
           $client_package_install_options = undef
           $client_package_uninstall_options = undef
           $package_provider = undef
-          $fileowner = 'root'
-          $filegroup = 'root'
-          $pubfilemode = '0644'
-          $prvfilemode = '0600'
           $sshd_dir = '/etc/ssh'
           $sshd_config = '/etc/ssh/sshd_config'
           $ssh_config = '/etc/ssh/ssh_config'
@@ -209,12 +461,40 @@ class ssh::params {
           $service_name = 'svc:/network/ssh:default'
           $sftp_server_path = 'internal-sftp'
           $newline = "\n"
+          $fileperms = {
+            ssh_config => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0644',
+            },
+            known_hosts => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0644',
+            },
+            sshd_config => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0640',
+            },
+            issue_net => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0644',
+            },
+            privkey => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0640',
+            },
+            pubkey => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0644',
+            }
+          }
         }
         default: {
-          $fileowner = 'root'
-          $filegroup = 'root'
-          $pubfilemode = '0644'
-          $prvfilemode = '0600'
           $sshd_dir = '/etc/ssh'
           $sshd_config = '/etc/ssh/sshd_config'
           $ssh_config = '/etc/ssh/ssh_config'
@@ -227,6 +507,38 @@ class ssh::params {
           $client_package_uninstall_options = undef
           $package_provider = undef
           $newline = "\n"
+          $fileperms = {
+            ssh_config => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0644',
+            },
+            known_hosts => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0644',
+            },
+            sshd_config => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0640',
+            },
+            issue_net => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0644',
+            },
+            privkey => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0640',
+            },
+            pubkey => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0644',
+            }
+          }
           case versioncmp($::kernelrelease, '5.10') {
             1: {
               # Solaris 11 and later
@@ -256,10 +568,6 @@ class ssh::params {
           $client_package_install_options = undef
           $client_package_uninstall_options = undef
           $package_provider = undef
-          $fileowner = 'root'
-          $filegroup = 'root'
-          $pubfilemode = '0644'
-          $prvfilemode = '0600'
           $sshd_dir = '/etc/ssh'
           $sshd_config = '/etc/ssh/sshd_config'
           $ssh_config = '/etc/ssh/ssh_config'
@@ -267,6 +575,38 @@ class ssh::params {
           $service_name = 'sshd'
           $sftp_server_path = '/usr/lib/misc/sftp-server'
           $newline = "\n"
+          $fileperms = {
+            ssh_config => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0644',
+            },
+            known_hosts => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0644',
+            },
+            sshd_config => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0640',
+            },
+            issue_net => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0644',
+            },
+            privkey => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0640',
+            },
+            pubkey => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0644',
+            }
+          }
         }
         'Amazon': {
           $server_package_name = 'openssh-server'
@@ -276,10 +616,6 @@ class ssh::params {
           $client_package_install_options = undef
           $client_package_uninstall_options = undef
           $package_provider = undef
-          $fileowner = 'root'
-          $filegroup = 'root'
-          $pubfilemode = '0644'
-          $prvfilemode = '0600'
           $sshd_dir = '/etc/ssh'
           $sshd_config = '/etc/ssh/sshd_config'
           $ssh_config = '/etc/ssh/ssh_config'
@@ -287,6 +623,38 @@ class ssh::params {
           $service_name = 'sshd'
           $sftp_server_path = '/usr/libexec/openssh/sftp-server'
           $newline = "\n"
+          $fileperms = {
+            ssh_config => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0644',
+            },
+            known_hosts => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0644',
+            },
+            sshd_config => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0640',
+            },
+            issue_net => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0644',
+            },
+            privkey => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0640',
+            },
+            pubkey => {
+              owner => 'root',
+              group => 'root',
+              mode  => '0644',
+            }
+          }
         }
         default: {
           fail("Unsupported platform: ${::osfamily}/${::operatingsystem}")
