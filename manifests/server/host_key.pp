@@ -81,9 +81,9 @@ define ssh::server::host_key (
 
   file {"${name}_pub":
     ensure  => $ensure,
-    owner   => $::ssh::params::fileowner,
-    group   => $::ssh::params::filegroup,
-    mode    => $::ssh::params::pubfilemode,
+    owner   => $::ssh::params::fileperms['pubkey']['owner'],
+    group   => $::ssh::params::fileperms['pubkey']['group'],
+    mode    => $::ssh::params::fileperms['pubkey']['mode'],
     path    => "${::ssh::params::sshd_dir}/${name}.pub",
     source  => $manage_pub_key_source,
     content => $manage_pub_key_content,
@@ -92,9 +92,9 @@ define ssh::server::host_key (
 
   file {"${name}_priv":
     ensure  => $ensure,
-    owner   => $::ssh::params::fileowner,
-    group   => $::ssh::params::filegroup,
-    mode    => $::ssh::params::prvfilemode,
+    owner   => $::ssh::params::fileperms['privkey']['owner'],
+    group   => $::ssh::params::fileperms['privkey']['group'],
+    mode    => $::ssh::params::fileperms['privkey']['mode'],
     path    => "${::ssh::params::sshd_dir}/${name}",
     source  => $manage_priv_key_source,
     content => $manage_priv_key_content,
@@ -104,9 +104,9 @@ define ssh::server::host_key (
   if !empty($certificate_source) or !empty($certificate_content) {
     file {"${name}_cert":
       ensure  => $ensure,
-      owner   => $::ssh::params::fileowner,
-      group   => $::ssh::params::filegroup,
-      mode    => $::ssh::params::pubfilemode,
+      owner   => $::ssh::params::fileperms['pubkey']['owner'],
+      group   => $::ssh::params::fileperms['pubkey']['group'],
+      mode    => $::ssh::params::fileperms['pubkey']['mode'],
       path    => "${::ssh::params::sshd_dir}/${name}-cert.pub",
       source  => $manage_cert_source,
       content => $manage_cert_content,

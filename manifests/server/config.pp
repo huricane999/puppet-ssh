@@ -3,7 +3,7 @@ class ssh::server::config {
 
   case $ssh::server::validate_sshd_file {
     true: {
-      $sshd_validate_cmd = '/usr/sbin/sshd -tf %'
+      $sshd_validate_cmd = "${ssh::params::sshd_path} -tf %"
     }
     default: {
       $sshd_validate_cmd = undef
@@ -15,9 +15,9 @@ class ssh::server::config {
   } else {
     concat { $ssh::params::sshd_config:
       ensure       => present,
-      owner        => $ssh::params::fileowner,
-      group        => $ssh::params::filegroup,
-      mode         => $ssh::params::prvfilemode,
+      owner        => $ssh::params::fileperms['sshd_config']['owner'],
+      group        => $ssh::params::fileperms['sshd_config']['group'],
+      mode         => $ssh::params::fileperms['sshd_config']['mode'],
       validate_cmd => $sshd_validate_cmd,
       notify       => Service[$ssh::params::service_name],
     }
@@ -32,9 +32,9 @@ class ssh::server::config {
   if $::ssh::server::use_issue_net {
     file { $ssh::params::issue_net:
       ensure  => present,
-      owner   => $ssh::params::fileowner,
-      group   => $ssh::params::filegroup,
-      mode    => $ssh::params::pubfilemode,
+      owner   => $ssh::params::fileperms['issue_net']['owner'],
+      group   => $ssh::params::fileperms['issue_net']['group'],
+      mode    => $ssh::params::fileperms['issue_net']['mode'],
       content => regsubst(template("${module_name}/issue.net.erb"),'\n',$ssh::params::newline,'EMG'),
       notify  => Service[$ssh::params::service_name],
     }
