@@ -285,7 +285,7 @@ class ssh::params {
           mode  => '0755',
         }
       }
-      if $::windows_systemtype == 'x64' {
+      if $::architecture == 'x64' {
         $sshd_dir = 'C:/Program Files/OpenSSH-Win64'
       }
       else {
