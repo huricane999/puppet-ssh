@@ -46,7 +46,7 @@ class ssh::params {
           owner => 'root',
           group => 'root',
           mode  => '0644',
-        }
+        },
       }
     }
     'RedHat': {
@@ -95,7 +95,7 @@ class ssh::params {
           owner => 'root',
           group => 'root',
           mode  => '0644',
-        }
+        },
       }
     }
     'FreeBSD', 'DragonFly': {
@@ -144,7 +144,7 @@ class ssh::params {
           owner => 'root',
           group => 'root',
           mode  => '0644',
-        }
+        },
       }
     }
     'OpenBSD': {
@@ -193,7 +193,7 @@ class ssh::params {
           owner => 'root',
           group => 'root',
           mode  => '0644',
-        }
+        },
       }
     }
     'Darwin': {
@@ -242,7 +242,7 @@ class ssh::params {
           owner => 'root',
           group => 'root',
           mode  => '0644',
-        }
+        },
       }
     }
     'windows': {
@@ -283,7 +283,7 @@ class ssh::params {
           owner => 'Administrators',
           group => 'NT SERVICE\SSHD',
           mode  => '0755',
-        }
+        },
       }
       if $::architecture == 'x64' {
         $sshd_dir = 'C:/Program Files/OpenSSH-Win64'
@@ -345,7 +345,7 @@ class ssh::params {
           owner => 'root',
           group => 'root',
           mode  => '0644',
-        }
+        },
       }
     }
     'Suse': {
@@ -392,7 +392,7 @@ class ssh::params {
           owner => 'root',
           group => 'root',
           mode  => '0644',
-        }
+        },
       }
       case $::operatingsystem {
         'SLES': {
@@ -468,7 +468,7 @@ class ssh::params {
               owner => 'root',
               group => 'root',
               mode  => '0644',
-            }
+            },
           }
         }
         default: {
@@ -515,7 +515,7 @@ class ssh::params {
               owner => 'root',
               group => 'root',
               mode  => '0644',
-            }
+            },
           }
           case versioncmp($::kernelrelease, '5.10') {
             1: {
@@ -584,7 +584,7 @@ class ssh::params {
               owner => 'root',
               group => 'root',
               mode  => '0644',
-            }
+            },
           }
         }
         'Amazon': {
@@ -633,7 +633,7 @@ class ssh::params {
               owner => 'root',
               group => 'root',
               mode  => '0644',
-            }
+            },
           }
         }
         default: {
