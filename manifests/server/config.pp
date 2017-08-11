@@ -3,7 +3,7 @@ class ssh::server::config {
 
   case $ssh::server::validate_sshd_file {
     true: {
-      $sshd_validate_cmd = '/usr/sbin/sshd -tf %'
+      $sshd_validate_cmd = "${ssh::params::sshd_path} -tf %"
     }
     default: {
       $sshd_validate_cmd = undef

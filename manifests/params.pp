@@ -8,6 +8,7 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
+      $sshd_path = '/usr/sbin/sshd'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -56,6 +57,7 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
+      $sshd_path = '/usr/sbin/sshd'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -104,6 +106,7 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
+      $sshd_path = '/usr/sbin/sshd'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -152,6 +155,7 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
+      $sshd_path = '/usr/sbin/sshd'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -200,6 +204,7 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
+      $sshd_path = '/usr/sbin/sshd'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -286,6 +291,7 @@ class ssh::params {
       else {
         $sshd_dir = 'C:/Program Files/OpenSSH-Win32'
       }
+      $sshd_path = "${sshd_dir}/sshd.exe"
       $sshd_config = "${sshd_dir}/sshd_config"
       $ssh_config = "${sshd_dir}/ssh_config"
       $ssh_known_hosts = "${sshd_dir}/ssh_known_hosts"
@@ -333,6 +339,7 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
+      $sshd_path = '/usr/sbin/sshd'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -381,6 +388,7 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
+      $sshd_path = '/usr/sbin/sshd'
       $sshd_dir = '/etc/ssh'
       $sshd_config = '/etc/ssh/sshd_config'
       $ssh_config = '/etc/ssh/ssh_config'
@@ -454,6 +462,7 @@ class ssh::params {
           $client_package_install_options = undef
           $client_package_uninstall_options = undef
           $package_provider = undef
+          $sshd_path = '/usr/sbin/sshd'
           $sshd_dir = '/etc/ssh'
           $sshd_config = '/etc/ssh/sshd_config'
           $ssh_config = '/etc/ssh/ssh_config'
@@ -506,6 +515,7 @@ class ssh::params {
           $client_package_install_options = undef
           $client_package_uninstall_options = undef
           $package_provider = undef
+          $sshd_path = '/usr/sbin/sshd'
           $newline = "\n"
           $fileperms = {
             ssh_config => {
@@ -568,6 +578,7 @@ class ssh::params {
           $client_package_install_options = undef
           $client_package_uninstall_options = undef
           $package_provider = undef
+          $sshd_path = '/usr/sbin/sshd'
           $sshd_dir = '/etc/ssh'
           $sshd_config = '/etc/ssh/sshd_config'
           $ssh_config = '/etc/ssh/ssh_config'
@@ -616,6 +627,7 @@ class ssh::params {
           $client_package_install_options = undef
           $client_package_uninstall_options = undef
           $package_provider = undef
+          $sshd_path = '/usr/sbin/sshd'
           $sshd_dir = '/etc/ssh'
           $sshd_config = '/etc/ssh/sshd_config'
           $ssh_config = '/etc/ssh/ssh_config'
