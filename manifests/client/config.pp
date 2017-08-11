@@ -13,7 +13,7 @@ class ssh::client::config
       owner   => $ssh::params::fileowner,
       group   => $ssh::params::filegroup,
       mode    => $ssh::params::pubfilemode,
-      content => template("${module_name}/ssh_config.erb"),
+      content => regsubst(template("${module_name}/ssh_config.erb"),'\n',$ssh::params::newline,'EMG'),
       require => Class['ssh::client::install'],
     }
   }
