@@ -298,38 +298,6 @@ class ssh::params {
       $service_name = 'sshd'
       $sftp_server_path = 'sftp-server.exe'
       $newline = "\r\n"
-      $fileperms = {
-        ssh_config => {
-          owner => 'root',
-          group => 'root',
-          mode  => '0644',
-        },
-        known_hosts => {
-          owner => 'root',
-          group => 'root',
-          mode  => '0644',
-        },
-        sshd_config => {
-          owner => 'root',
-          group => 'root',
-          mode  => '0640',
-        },
-        issue_net => {
-          owner => 'root',
-          group => 'root',
-          mode  => '0644',
-        },
-        privkey => {
-          owner => 'root',
-          group => 'root',
-          mode  => '0640',
-        },
-        pubkey => {
-          owner => 'root',
-          group => 'root',
-          mode  => '0644',
-        }
-      }
     }
     'ArchLinux': {
       $server_package_name = 'openssh'
