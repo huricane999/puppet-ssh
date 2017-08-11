@@ -30,7 +30,7 @@ class ssh::params {
         sshd_config => {
           owner => 'root',
           group => 'root',
-          mode  => '0640',
+          mode  => '0600',
         },
         issue_net => {
           owner => 'root',
@@ -79,7 +79,7 @@ class ssh::params {
         sshd_config => {
           owner => 'root',
           group => 'root',
-          mode  => '0640',
+          mode  => '0600',
         },
         issue_net => {
           owner => 'root',
@@ -128,7 +128,7 @@ class ssh::params {
         sshd_config => {
           owner => 'root',
           group => 'root',
-          mode  => '0640',
+          mode  => '0600',
         },
         issue_net => {
           owner => 'root',
@@ -177,7 +177,7 @@ class ssh::params {
         sshd_config => {
           owner => 'root',
           group => 'root',
-          mode  => '0640',
+          mode  => '0600',
         },
         issue_net => {
           owner => 'root',
@@ -226,7 +226,7 @@ class ssh::params {
         sshd_config => {
           owner => 'root',
           group => 'root',
-          mode  => '0640',
+          mode  => '0600',
         },
         issue_net => {
           owner => 'root',
@@ -329,7 +329,7 @@ class ssh::params {
         sshd_config => {
           owner => 'root',
           group => 'root',
-          mode  => '0640',
+          mode  => '0600',
         },
         issue_net => {
           owner => 'root',
@@ -376,7 +376,7 @@ class ssh::params {
         sshd_config => {
           owner => 'root',
           group => 'root',
-          mode  => '0640',
+          mode  => '0600',
         },
         issue_net => {
           owner => 'root',
@@ -452,7 +452,7 @@ class ssh::params {
             sshd_config => {
               owner => 'root',
               group => 'root',
-              mode  => '0640',
+              mode  => '0600',
             },
             issue_net => {
               owner => 'root',
@@ -499,7 +499,7 @@ class ssh::params {
             sshd_config => {
               owner => 'root',
               group => 'root',
-              mode  => '0640',
+              mode  => '0600',
             },
             issue_net => {
               owner => 'root',
@@ -568,7 +568,7 @@ class ssh::params {
             sshd_config => {
               owner => 'root',
               group => 'root',
-              mode  => '0640',
+              mode  => '0600',
             },
             issue_net => {
               owner => 'root',
@@ -617,7 +617,7 @@ class ssh::params {
             sshd_config => {
               owner => 'root',
               group => 'root',
-              mode  => '0640',
+              mode  => '0600',
             },
             issue_net => {
               owner => 'root',
