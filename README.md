@@ -14,6 +14,9 @@ Source: https://github.com/saz/puppet-ssh
 * puppetlabs/stdlib
 * puppetlabs/concat
 
+For Windows:
+* puppetlabs/chocolatey (configured externally)
+
 ## Usage
 
 Since version 2.0.0 only non-default values are written to both,
@@ -369,3 +372,11 @@ ssh_server_version_full => 6.6.1p1
 ssh_server_version_major => 6.6
 ssh_server_version_release => 6.6.1
 ```
+
+## Special note about Windows support
+
+Windows support is somewhat experimental, as it is based on a product
+that is not fully released: <https://github.com/PowerShell/Win32-OpenSSH>
+
+This product is installed via Chocolatey and the package definition
+can be found here: <https://chocolatey.org/packages/openssh>
