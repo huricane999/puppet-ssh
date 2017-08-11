@@ -24,7 +24,7 @@ class ssh::server::config {
 
     concat::fragment { 'global config':
       target  => $ssh::params::sshd_config,
-      content => template("${module_name}/sshd_config.erb"),
+      content => regsubst(template("${module_name}/sshd_config.erb"), '\n', $ssh::params::newline,'EMG'),
       order   => '00',
     }
   }
@@ -35,7 +35,7 @@ class ssh::server::config {
       owner   => $ssh::params::fileowner,
       group   => $ssh::params::filegroup,
       mode    => $ssh::params::pubfilemode,
-      content => template("${module_name}/issue.net.erb"),
+      content => regsubst(template("${module_name}/issue.net.erb"),'\n',$ssh::params::newline,'EMG'),
       notify  => Service[$ssh::params::service_name],
     }
 

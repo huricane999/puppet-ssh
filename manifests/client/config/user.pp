@@ -51,6 +51,6 @@ define ssh::client::config::user(
     ensure  => $_files_ensure,
     owner   => $name,
     mode    => $::ssh::params::user_ssh_config_default_mode,
-    content => template("${module_name}/ssh_config.erb"),
+    content => regsubst(template("${module_name}/ssh_config.erb"),'\n',$ssh::params::newline,'EMG'),
   }
 }
