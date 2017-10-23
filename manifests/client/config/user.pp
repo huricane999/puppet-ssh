@@ -27,7 +27,7 @@ define ssh::client::config::user(
   }
   else {
     if ($user_home_dir == undef) {
-      $_user_home_dir = "/home/${name}"
+      $_user_home_dir = "${::ssh::params::home_dir_path}/${name}"
     }
     else {
       validate_absolute_path($user_home_dir)
