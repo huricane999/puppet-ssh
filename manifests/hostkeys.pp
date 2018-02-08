@@ -17,6 +17,8 @@ class ssh::hostkeys(
     tag 'hostkey_all', "hostkey_${storeconfigs_group}"
   }
 
+  notify{ "known_hosts file is: ${::ssh::params::ssh_known_hosts}"}
+  
   if defined('$::sshdsakey') {
     @@sshkey { "${::fqdn}_dsa":
       ensure       => present,
