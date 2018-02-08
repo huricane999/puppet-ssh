@@ -68,10 +68,10 @@ class ssh::params {
       $client_package_install_options = undef
       $client_package_uninstall_options = undef
       $package_provider = undef
-      $sshd_dir = '/etc/ssh'
-      $sshd_config = '/etc/ssh/sshd_config'
-      $ssh_config = '/etc/ssh/ssh_config'
-      $ssh_known_hosts = '/etc/ssh/ssh_known_hosts'
+      $sshd_dir = '/etc'
+      $sshd_config = '/etc/sshd_config'
+      $ssh_config = '/etc/ssh_config'
+      $ssh_known_hosts = '/etc/ssh_known_hosts'
       $service_name = 'com.openssh.sshd'
       $sftp_server_path = '/usr/libexec/sftp-server'
     }
