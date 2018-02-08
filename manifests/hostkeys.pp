@@ -23,6 +23,7 @@ class ssh::hostkeys(
       host_aliases => $host_aliases,
       type         => dsa,
       key          => $::sshdsakey,
+      target       => $::ssh::params::ssh_known_hosts,
     }
   } else {
     @@sshkey { "${::fqdn}_dsa":
@@ -35,6 +36,7 @@ class ssh::hostkeys(
       host_aliases => $host_aliases,
       type         => rsa,
       key          => $::sshrsakey,
+      target       => $::ssh::params::ssh_known_hosts,
     }
   } else {
     @@sshkey { "${::fqdn}_rsa":
@@ -47,6 +49,7 @@ class ssh::hostkeys(
       host_aliases => $host_aliases,
       type         => 'ecdsa-sha2-nistp256',
       key          => $::sshecdsakey,
+      target       => $::ssh::params::ssh_known_hosts,
     }
   } else {
     @@sshkey { "${::fqdn}_ecdsa":
@@ -60,6 +63,7 @@ class ssh::hostkeys(
       host_aliases => $host_aliases,
       type         => 'ed25519',
       key          => $::sshed25519key,
+      target       => $::ssh::params::ssh_known_hosts,
     }
   } else {
     @@sshkey { "${::fqdn}_ed25519":
